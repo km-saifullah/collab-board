@@ -31,7 +31,7 @@ export const updateTasks = async (req, res) => {
     const board = await Board.findByIdAndUpdate(
       boardId,
       { tasks },
-      { new: true },
+      { returnDocument: "after" },
     );
 
     res.json(board);
